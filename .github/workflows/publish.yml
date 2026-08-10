@@ -1,0 +1,123 @@
+name: Publish Javadocs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * 1"
+  repository_dispatch:
+    types: [publish-docs]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-javadocs
+  cancel-in-progress: true
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.load.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: load
+        run: echo "matrix=$(jq -c '.projects' projects.json)" >> "$GITHUB_OUTPUT"
+
+  docs:
+    needs: setup
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        project: ${{ fromJson(needs.setup.outputs.matrix) }}
+    steps:
+      - name: Checkout hub
+        uses: actions/checkout@v4
+        with:
+          path: hub
+
+      - name: Checkout ${{ matrix.project.name }}
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ matrix.project.repo }}
+          ref: ${{ matrix.project.ref }}
+          path: proj
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: |
+            8
+            21
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Generate Javadoc
+        continue-on-error: true
+        working-directory: proj
+        run: |
+          chmod +x ./gradlew
+          ./gradlew ${{ matrix.project.task || 'javadoc' }} \
+            -I "${{ github.workspace }}/hub/gradle/javadoc.init.gradle" \
+            --no-daemon --stacktrace
+
+      - name: Stage output
+        id: stage
+        run: |
+          OUT="proj/${{ matrix.project.out || 'build/docs/javadoc' }}"
+          if [ -f "$OUT/index.html" ]; then
+            mkdir -p out && cp -r "$OUT/." "out/"
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No javadoc produced for ${{ matrix.project.name }}"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload
+        if: steps.stage.outputs.ok == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-${{ matrix.project.id }}
+          path: out
+          retention-days: 1
+
+  publish:
+    needs: [setup, docs]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Download all docs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: docs-*
+          path: _artifacts
+
+      - name: Assemble site
+        run: |
+          mkdir -p site
+          for dir in _artifacts/docs-*/; do
+            [ -d "$dir" ] || continue
+            id="$(basename "$dir" | sed 's/^docs-//')"
+            mkdir -p "site/$id"
+            cp -r "$dir." "site/$id/"
+          done
+          node scripts/build-landing.mjs site
+          touch site/.nojekyll
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: finn
+          user_email: finn@birich.de
+          commit_message: "docs: publish unified Slimefun5 javadocs"

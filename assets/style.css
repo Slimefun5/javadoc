@@ -1,0 +1,46 @@
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --text: #1b1f24; --muted: #5b6470;
+  --border: #e3e6ea; --accent: #2ea043; --accent-weak: #eaf6ec; --shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117; --surface: #161b22; --text: #e6edf3; --muted: #8b949e;
+    --border: #262c34; --accent: #3fb950; --accent-weak: #17251b; --shadow: 0 1px 2px rgba(0,0,0,.4);
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 15px/1.55 "Noto Sans", -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+.header {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .85rem 1.25rem; background: var(--surface); border-bottom: 1px solid var(--border);
+  position: sticky; top: 0;
+}
+.brand { display: flex; align-items: center; gap: .6rem; color: var(--text); text-decoration: none; font-size: 1.1rem; }
+.brand img { border-radius: 8px; }
+.brand strong { color: var(--accent); font-weight: 700; }
+.links { display: flex; gap: 1.1rem; }
+.links a { color: var(--muted); text-decoration: none; font-size: .9rem; }
+.links a:hover { color: var(--text); }
+main { max-width: 1040px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+.lede { color: var(--muted); margin: .5rem 0 2rem; }
+.group { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 2rem 0 .8rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: .9rem; }
+.card {
+  display: block; text-decoration: none; color: inherit; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; box-shadow: var(--shadow);
+  transition: border-color .15s, transform .15s;
+}
+a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-pending { opacity: .62; }
+.card-head { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.card-name { font-weight: 700; }
+.badge { font-size: .68rem; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: .05rem .5rem; }
+.card-blurb { color: var(--muted); font-size: .88rem; margin: .45rem 0 .8rem; min-height: 2.4em; }
+.card-foot { color: var(--accent); font-size: .85rem; font-weight: 600; }
+.card-foot a { color: var(--muted); }
+footer { max-width: 1040px; margin: 0 auto; padding: 1.5rem 1.25rem; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--border); }
+footer code { background: var(--accent-weak); padding: .1rem .35rem; border-radius: 5px; }
+a { color: var(--accent); }

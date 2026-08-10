@@ -1,0 +1,30 @@
+{
+  "projects": [
+    { "id": "core", "name": "Slimefun5", "repo": "Slimefun5/Slimefun5", "ref": "experimental", "task": ":core:javadoc", "out": "core/build/docs/javadoc", "group": "Core", "blurb": "The core Slimefun plugin API." },
+
+    { "id": "InfinityLib", "name": "InfinityLib", "repo": "Slimefun5/InfinityLib", "ref": "experimental", "group": "Library", "blurb": "Shared library used by several addons." },
+
+    { "id": "Networks", "name": "Networks", "repo": "Slimefun5/Networks", "ref": "experimental", "group": "Addon", "blurb": "Item and energy transport networks." },
+    { "id": "InfinityExpansion", "name": "InfinityExpansion", "repo": "Slimefun5/InfinityExpansion", "ref": "experimental", "group": "Addon", "blurb": "End-game machines and infinity tiers." },
+    { "id": "FoxyMachines", "name": "FoxyMachines", "repo": "Slimefun5/FoxyMachines", "ref": "experimental", "group": "Addon", "blurb": "Utility machines and tools." },
+    { "id": "GeneticChickengineering", "name": "GeneticChickengineering", "repo": "Slimefun5/GeneticChickengineering", "ref": "experimental", "group": "Addon", "blurb": "Breed chickens that lay Slimefun resources." },
+    { "id": "Supreme", "name": "Supreme", "repo": "Slimefun5/Supreme", "ref": "experimental", "group": "Addon", "blurb": "Machines, gear and mob-tech tiers." },
+    { "id": "DynaTech", "name": "DynaTech", "repo": "Slimefun5/DynaTech", "ref": "experimental", "group": "Addon", "blurb": "Fluid, tesseract and wireless-transfer tech." },
+    { "id": "SlimeTinker", "name": "SlimeTinker", "repo": "Slimefun5/SlimeTinker", "ref": "experimental", "group": "Addon", "blurb": "Modular tinkering tools and traits." },
+    { "id": "ExoticGarden", "name": "ExoticGarden", "repo": "Slimefun5/ExoticGarden", "ref": "experimental", "group": "Addon", "blurb": "Plants, produce and cooking." },
+    { "id": "FluffyMachines", "name": "FluffyMachines", "repo": "Slimefun5/FluffyMachines", "ref": "experimental", "group": "Addon", "blurb": "Auto-crafting and quality-of-life machines." },
+    { "id": "Galactifun", "name": "Galactifun", "repo": "Slimefun5/Galactifun", "ref": "experimental", "group": "Addon", "blurb": "Space travel, planets and oxygen." },
+    { "id": "LiteXpansion", "name": "LiteXpansion", "repo": "Slimefun5/LiteXpansion", "ref": "experimental", "group": "Addon", "blurb": "IndustrialCraft-style electric machines." },
+    { "id": "ChestTerminal", "name": "ChestTerminal", "repo": "Slimefun5/ChestTerminal", "ref": "experimental", "group": "Addon", "blurb": "Networked chest terminal access." },
+    { "id": "SensibleToolbox", "name": "SensibleToolbox", "repo": "Slimefun5/SensibleToolbox", "ref": "experimental", "group": "Addon", "blurb": "Toolbox of machines and gadgets." },
+    { "id": "FastMachines", "name": "FastMachines", "repo": "Slimefun5/FastMachines", "ref": "experimental", "group": "Addon", "blurb": "Faster variants of core machines." },
+    { "id": "SlimefunAdvancements", "name": "SlimefunAdvancements", "repo": "Slimefun5/SlimefunAdvancements", "ref": "experimental", "group": "Addon", "blurb": "Custom advancement trees for Slimefun." },
+    { "id": "AdvancementAPI", "name": "AdvancementAPI", "repo": "Slimefun5/AdvancementAPI", "ref": "main", "group": "Addon", "blurb": "Advancement creation API." },
+    { "id": "LuckyBlocks", "name": "LuckyBlocks", "repo": "Slimefun5/LuckyBlocks", "ref": "experimental", "group": "Addon", "blurb": "Slimefun lucky blocks." },
+    { "id": "MissileWarfare", "name": "MissileWarfare", "repo": "Slimefun5/MissileWarfare", "ref": "experimental", "group": "Addon", "blurb": "Missiles and warfare contraptions." },
+    { "id": "SMG", "name": "SMG", "repo": "Slimefun5/SMG", "ref": "experimental", "group": "Addon", "blurb": "Slimefun material generators." },
+    { "id": "SoulJars", "name": "SoulJars", "repo": "Slimefun5/SoulJars", "ref": "experimental", "group": "Addon", "blurb": "Capture mob souls in jars." },
+    { "id": "SimpleUtils", "name": "SimpleUtils", "repo": "Slimefun5/SimpleUtils", "ref": "experimental", "group": "Addon", "blurb": "Small utility items and blocks." },
+    { "id": "ExtraGear", "name": "ExtraGear", "repo": "Slimefun5/ExtraGear", "ref": "experimental", "group": "Addon", "blurb": "Extra armor sets and gear." }
+  ]
+}

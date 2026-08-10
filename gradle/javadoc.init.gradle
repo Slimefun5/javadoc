@@ -1,0 +1,12 @@
+allprojects {
+    tasks.withType(Javadoc).configureEach {
+        failOnError = false
+        options.encoding = 'UTF-8'
+        if (options instanceof org.gradle.external.javadoc.StandardJavadocDocletOptions) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+            options.addStringOption('tag', 'apiNote:a:API Note:')
+            options.addStringOption('tag', 'implSpec:a:Implementation Requirements:')
+            options.addStringOption('tag', 'implNote:a:Implementation Note:')
+        }
+    }
+}
