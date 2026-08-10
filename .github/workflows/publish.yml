@@ -63,7 +63,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           chmod +x ./gradlew
-          ./gradlew ${{ matrix.project.task || 'javadoc' }} \
+          ARGS=""
+          if [ -n "${{ matrix.project.javadocJdk }}" ]; then ARGS="-PjavadocJdk=${{ matrix.project.javadocJdk }}"; fi
+          ./gradlew ${{ matrix.project.task || 'javadoc' }} $ARGS \
             -I "${{ github.workspace }}/hub/gradle/javadoc.init.gradle" \
             --no-daemon --stacktrace
 

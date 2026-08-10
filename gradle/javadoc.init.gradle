@@ -2,6 +2,9 @@ allprojects {
     tasks.withType(Javadoc).configureEach {
         failOnError = false
         options.encoding = 'UTF-8'
+        if (project.hasProperty('javadocJdk') && project.javadocJdk.toString().trim()) {
+            javadocTool.set(javaToolchains.javadocToolFor { languageVersion.set(JavaLanguageVersion.of(project.javadocJdk.toString().trim().toInteger())) })
+        }
         if (options instanceof org.gradle.external.javadoc.StandardJavadocDocletOptions) {
             def raw = (project.findProperty('displayVersion') ?: project.version).toString()
             def ver = raw.replaceFirst(/^(gh-)?v/, '')
