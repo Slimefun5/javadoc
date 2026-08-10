@@ -3,6 +3,10 @@ allprojects {
         failOnError = false
         options.encoding = 'UTF-8'
         if (options instanceof org.gradle.external.javadoc.StandardJavadocDocletOptions) {
+            def raw = (project.findProperty('displayVersion') ?: project.version).toString()
+            def ver = raw.replaceFirst(/^(gh-)?v/, '')
+            options.docTitle = "${project.name} ${ver} API"
+            options.windowTitle = "${project.name} ${ver} API"
             options.addStringOption('Xdoclint:none', '-quiet')
             options.addStringOption('tag', 'apiNote:a:API Note:')
             options.addStringOption('tag', 'implSpec:a:Implementation Requirements:')
