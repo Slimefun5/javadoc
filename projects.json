@@ -19,7 +19,7 @@
     { "id": "SensibleToolbox", "name": "SensibleToolbox", "repo": "Slimefun5/SensibleToolbox", "ref": "experimental", "group": "Addon", "blurb": "Toolbox of machines and gadgets." },
     { "id": "FastMachines", "name": "FastMachines", "repo": "Slimefun5/FastMachines", "ref": "experimental", "group": "Addon", "blurb": "Faster variants of core machines." },
     { "id": "SlimefunAdvancements", "name": "SlimefunAdvancements", "repo": "Slimefun5/SlimefunAdvancements", "ref": "experimental", "group": "Addon", "blurb": "Custom advancement trees for Slimefun." },
-    { "id": "AdvancementAPI", "name": "AdvancementAPI", "repo": "Slimefun5/AdvancementAPI", "ref": "main", "group": "Addon", "blurb": "Advancement creation API." },
+    { "id": "AdvancementAPI", "name": "AdvancementAPI", "repo": "Slimefun5/AdvancementAPI", "ref": "main", "java": "8", "group": "Addon", "blurb": "Advancement creation API." },
     { "id": "LuckyBlocks", "name": "LuckyBlocks", "repo": "Slimefun5/LuckyBlocks", "ref": "experimental", "group": "Addon", "blurb": "Slimefun lucky blocks." },
     { "id": "MissileWarfare", "name": "MissileWarfare", "repo": "Slimefun5/MissileWarfare", "ref": "experimental", "group": "Addon", "blurb": "Missiles and warfare contraptions." },
     { "id": "SMG", "name": "SMG", "repo": "Slimefun5/SMG", "ref": "experimental", "group": "Addon", "blurb": "Slimefun material generators." },
