@@ -99,6 +99,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Fetch shared javadoc palette
+        run: curl -sSL https://raw.githubusercontent.com/Slimefun5/web/main/javadoc.css -o /tmp/jd-override.css
+
       - name: Download all docs
         uses: actions/download-artifact@v4
         with:
@@ -113,6 +116,9 @@ jobs:
             id="$(basename "$dir" | sed 's/^docs-//')"
             mkdir -p "site/$id"
             cp -r "$dir." "site/$id/"
+            for ss in "site/$id/stylesheet.css" "site/$id/resource-files/stylesheet.css"; do
+              if [ -f "$ss" ]; then cat /tmp/jd-override.css >> "$ss"; fi
+            done
           done
           node scripts/build-landing.mjs site
           touch site/.nojekyll
