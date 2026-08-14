@@ -3,6 +3,7 @@
     { "id": "core", "name": "Slimefun5", "repo": "Slimefun5/Slimefun5", "ref": "experimental", "task": ":core:javadoc", "out": "core/build/docs/javadoc", "group": "Core", "blurb": "The core Slimefun plugin API." },
 
     { "id": "InfinityLib", "name": "InfinityLib", "repo": "Slimefun5/InfinityLib", "ref": "experimental", "group": "Library", "blurb": "Shared library used by several addons." },
+    { "id": "SlimefunMetrics", "name": "SlimefunMetrics", "repo": "Slimefun5/SlimefunMetrics", "ref": "main", "group": "Library", "blurb": "Decoupled bStats metrics module for the core." },
 
     { "id": "Networks", "name": "Networks", "repo": "Slimefun5/Networks", "ref": "experimental", "group": "Addon", "blurb": "Item and energy transport networks." },
     { "id": "InfinityExpansion", "name": "InfinityExpansion", "repo": "Slimefun5/InfinityExpansion", "ref": "experimental", "group": "Addon", "blurb": "End-game machines and infinity tiers." },
