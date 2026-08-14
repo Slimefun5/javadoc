@@ -99,6 +99,14 @@ jobs:
         with:
           node-version: 20
 
+      - name: Fetch shared page chrome
+        run: |
+          mkdir -p chrome
+          curl -sfL https://raw.githubusercontent.com/Slimefun5/web/main/header.html -o chrome/header.html
+          curl -sfL https://raw.githubusercontent.com/Slimefun5/web/main/footer.html -o chrome/footer.html
+          curl -sfL https://raw.githubusercontent.com/Slimefun5/web/main/tokens.css -o chrome/tokens.css
+          curl -sfL https://raw.githubusercontent.com/Slimefun5/web/main/site.css -o chrome/site.css
+
       - name: Fetch shared javadoc palette
         run: curl -sSL https://raw.githubusercontent.com/Slimefun5/web/main/javadoc.css -o /tmp/jd-override.css
 
@@ -120,7 +128,7 @@ jobs:
               if [ -f "$ss" ]; then cat /tmp/jd-override.css >> "$ss"; fi
             done
           done
-          node scripts/build-landing.mjs site
+          node scripts/build-landing.mjs site chrome
           touch site/.nojekyll
 
       - name: Deploy to gh-pages
