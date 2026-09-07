@@ -1,0 +1,15 @@
+io.github.sefiraat.networks
+io.github.sefiraat.networks.commands
+io.github.sefiraat.networks.compat
+io.github.sefiraat.networks.listeners
+io.github.sefiraat.networks.managers
+io.github.sefiraat.networks.network
+io.github.sefiraat.networks.network.barrel
+io.github.sefiraat.networks.network.stackcaches
+io.github.sefiraat.networks.slimefun
+io.github.sefiraat.networks.slimefun.groups
+io.github.sefiraat.networks.slimefun.network
+io.github.sefiraat.networks.slimefun.network.grid
+io.github.sefiraat.networks.slimefun.tools
+io.github.sefiraat.networks.utils
+io.github.sefiraat.networks.utils.datatypes

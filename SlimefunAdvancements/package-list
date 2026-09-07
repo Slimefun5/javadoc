@@ -1,0 +1,13 @@
+me.char321.sfadvancements
+me.char321.sfadvancements.api
+me.char321.sfadvancements.api.criteria
+me.char321.sfadvancements.api.reward
+me.char321.sfadvancements.core
+me.char321.sfadvancements.core.command
+me.char321.sfadvancements.core.criteria.completer
+me.char321.sfadvancements.core.criteria.progress
+me.char321.sfadvancements.core.gui
+me.char321.sfadvancements.core.registry
+me.char321.sfadvancements.core.tasks
+me.char321.sfadvancements.util
+me.char321.sfadvancements.vanilla

@@ -1,0 +1,14 @@
+me.gallowsdove.foxymachines
+me.gallowsdove.foxymachines.abstracts
+me.gallowsdove.foxymachines.commands
+me.gallowsdove.foxymachines.implementation.consumables
+me.gallowsdove.foxymachines.implementation.machines
+me.gallowsdove.foxymachines.implementation.materials
+me.gallowsdove.foxymachines.implementation.mobs
+me.gallowsdove.foxymachines.implementation.multiblock
+me.gallowsdove.foxymachines.implementation.tools
+me.gallowsdove.foxymachines.implementation.weapons
+me.gallowsdove.foxymachines.listeners
+me.gallowsdove.foxymachines.tasks
+me.gallowsdove.foxymachines.types
+me.gallowsdove.foxymachines.utils
