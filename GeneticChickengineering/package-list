@@ -1,0 +1,17 @@
+net.guizhanss.gcereborn
+net.guizhanss.gcereborn.core.adapters
+net.guizhanss.gcereborn.core.commands
+net.guizhanss.gcereborn.core.commands.subcommands
+net.guizhanss.gcereborn.core.genetics
+net.guizhanss.gcereborn.core.services
+net.guizhanss.gcereborn.integrations.wildstacker
+net.guizhanss.gcereborn.items
+net.guizhanss.gcereborn.items.chicken
+net.guizhanss.gcereborn.items.common
+net.guizhanss.gcereborn.items.machines
+net.guizhanss.gcereborn.libs.guizhanlib
+net.guizhanss.gcereborn.libs.guizhanlib.commands
+net.guizhanss.gcereborn.libs.guizhanlib.localization
+net.guizhanss.gcereborn.libs.guizhanlib.utils
+net.guizhanss.gcereborn.setup
+net.guizhanss.gcereborn.utils
