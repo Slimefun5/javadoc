@@ -1,0 +1,4 @@
+.card-head { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.badge { font-size: .68rem; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: .05rem .5rem; }
+.card-pending { opacity: .62; }
+.sf-card-go a { color: var(--muted); }
